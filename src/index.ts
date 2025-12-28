@@ -175,7 +175,11 @@ class BunCache {
    * Remove all entries from the cache.
    */
   clear(): void {
-    this.cache.run("DELETE FROM cache");
+    try {
+      this.cache.run("DELETE FROM cache");
+    } catch {
+      // Intentionally ignore errors to match error-handling style of put/delete.
+    }
   }
 
   /**
