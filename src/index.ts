@@ -187,7 +187,11 @@ class BunCache {
    * Only necessary for persistent caches or explicit cleanup in tests.
    */
   close(): void {
-    this.cache.close();
+    try {
+      this.cache.close();
+    } catch {
+      // Swallow errors during close to avoid crashes in cleanup paths.
+    }
   }
 }
 
