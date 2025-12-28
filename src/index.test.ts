@@ -34,7 +34,7 @@ describe("BunCache (in-memory)", () => {
   });
 
   afterEach(() => {
-    cache.clear?.(); // optional chaining in case API changes
+    cache.clear();
   });
 
   it("should store and retrieve a string value", () => {
