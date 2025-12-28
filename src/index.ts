@@ -104,7 +104,7 @@ class BunCache {
    * Stores a value in the cache.
    *
    * @param key   Cache key
-   * @param value Value to store (string, object, null, boolean)
+   * @param value Value to store (string, number, object, null, boolean)
    * @param ttl   Time-to-live in milliseconds (optional)
    */
   put(key: string, value: string | number | object | boolean | null, ttl?: number): boolean {
